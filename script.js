@@ -1,501 +1,531 @@
-// ==================== MENU DATA ====================
-const menuData = [
-    // CÀ PHÊ PHA MÁY
-    { id: 1, name: 'Cà phê đá', price: 12000, category: 'coffee' },
-    { id: 2, name: 'Cà phê đen', price: 10000, category: 'coffee' },
-    { id: 3, name: 'Cà phê sữa đá', price: 15000, category: 'coffee' },
-    { id: 4, name: 'Cà phê muối', price: 17000, category: 'coffee' },
-    { id: 5, name: 'Bạc xỉu', price: 18000, category: 'coffee' },
-    { id: 6, name: 'Ca cao sữa', price: 15000, category: 'coffee' },
-    
-    // SINH TỐ
-    { id: 7, name: 'Sinh tố Bơ', price: 20000, category: 'smoothie' },
-    { id: 8, name: 'Sinh tố Sầu riêng', price: 25000, category: 'smoothie' },
-    { id: 9, name: 'Sinh tố Mít', price: 20000, category: 'smoothie' },
-    { id: 10, name: 'Sinh tố Dâu', price: 20000, category: 'smoothie' },
-    { id: 11, name: 'Sinh tố Mãng cầu', price: 20000, category: 'smoothie' },
-    { id: 12, name: 'Sinh tố Kiwi', price: 20000, category: 'smoothie' },
-    
-    // TRÀ TRÁI CÂY
-    { id: 13, name: 'Trà đào', price: 17000, category: 'tea' },
-    { id: 14, name: 'Trà vải', price: 17000, category: 'tea' },
-    { id: 15, name: 'Trà Kiwi', price: 17000, category: 'tea' },
-    { id: 16, name: 'Trà chanh dây hạt đác', price: 20000, category: 'tea' },
-    { id: 17, name: 'Trà dâu tầm hạt đác', price: 20000, category: 'tea' },
-    { id: 18, name: 'Trà mãng cầu', price: 20000, category: 'tea' },
-    { id: 19, name: 'Trà chanh Thái xanh', price: 17000, category: 'tea' },
-    { id: 20, name: 'Trà dưa lưới', price: 17000, category: 'tea' },
-    { id: 21, name: 'Trà dâu', price: 17000, category: 'tea' },
-    { id: 22, name: 'Trà ổi hồng', price: 17000, category: 'tea' },
-    
-    // TRÀ SỮA
-    { id: 23, name: 'Trà sữa thái xanh', price: 20000, category: 'milktea' },
-    { id: 24, name: 'Trà sữa thái đỏ', price: 20000, category: 'milktea' },
-    { id: 25, name: 'Sữa tươi TCĐD', price: 20000, category: 'milktea' },
-    { id: 26, name: 'Trà sữa Matcha', price: 20000, category: 'milktea' },
-    { id: 27, name: 'Matcha latte', price: 20000, category: 'milktea' },
-    { id: 28, name: 'Cacao latte', price: 20000, category: 'milktea' },
-    { id: 29, name: 'Trà sữa việt quất', price: 20000, category: 'milktea' },
-    { id: 30, name: 'Trà sữa socola', price: 20000, category: 'milktea' },
-    
-    // ĂN VẶT & ĐIỂM TÂM
-    { id: 31, name: 'Bánh tráng trộn', price: 15000, category: 'food' },
-    { id: 32, name: 'Trái cây ly', price: 10000, category: 'food' },
-    { id: 33, name: 'Mì ly', price: 10000, category: 'food' },
-    { id: 34, name: 'Bánh Flan', price: 4000, category: 'food' },
-    { id: 35, name: 'Hủ tiếu', price: 25000, category: 'food' },
-    { id: 36, name: 'Cơm sườn', price: 25000, category: 'food' },
-    
-    // GIẢI KHÁT
-    { id: 37, name: 'Lipton tắc xí muội', price: 10000, category: 'drink' },
-    { id: 38, name: 'Tắc xí muội', price: 10000, category: 'drink' },
-    { id: 39, name: 'Đá me', price: 10000, category: 'drink' },
-    { id: 40, name: 'Trà đường', price: 8000, category: 'drink' },
-    
-    // THUỐC LÁ
-    { id: 41, name: 'Saigon Melon', price: 22000, category: 'tobacco' },
-    { id: 42, name: 'SaiGon Xì Gà', price: 22000, category: 'tobacco' },
-    { id: 43, name: 'Hero', price: 25000, category: 'tobacco' },
-    { id: 44, name: 'Jet', price: 30000, category: 'tobacco' },
-    { id: 45, name: 'SaiGon Silver', price: 20000, category: 'tobacco' },
-    
-    // ĐÁ XAY
-    { id: 46, name: 'Matcha Đá Xay', price: 25000, category: 'icecream' },
-    { id: 47, name: 'Oreo Đá Xay', price: 25000, category: 'icecream' },
-    
-    // SODA
-    { id: 48, name: 'Soda Đủ Vị', price: 15000, category: 'soda' }
-];
-
-// Category names mapping
-const categoryNames = {
-    'coffee': 'Cà Phê',
-    'smoothie': 'Sinh Tố',
-    'tea': 'Trà Trái Cây',
-    'milktea': 'Trà Sữa',
-    'food': 'Đồ Ăn',
-    'drink': 'Giải Khát',
-    'tobacco': 'Thuốc Lá',
-    'icecream': 'Đá Xay',
-    'soda': 'Soda'
+// ===========================
+// MENU DATA - Dữ liệu menu đã chuẩn hóa
+// ===========================
+const menuData = {
+    "Cà Phê Pha Máy": [
+        { name: "Cà phê đá", price: 12000 },
+        { name: "Cà phê đen", price: 10000 },
+        { name: "Cà phê sữa đá", price: 15000 },
+        { name: "Cà phê muối", price: 17000 },
+        { name: "Bạc xỉu", price: 18000 },
+        { name: "Ca cao sữa", price: 15000 }
+    ],
+    "Sinh Tố": [
+        { name: "Sinh tố Bơ", price: 20000 },
+        { name: "Sinh tố Sầu riêng", price: 25000 },
+        { name: "Sinh tố Mít", price: 20000 },
+        { name: "Sinh tố Dâu", price: 20000 },
+        { name: "Sinh tố Mãng cầu", price: 20000 },
+        { name: "Sinh tố Kiwi", price: 20000 }
+    ],
+    "Trà Trái Cây": [
+        { name: "Trà đào", price: 17000 },
+        { name: "Trà vải", price: 17000 },
+        { name: "Trà Kiwi", price: 17000 },
+        { name: "Trà chanh dây hạt đắc", price: 20000 },
+        { name: "Trà dâu tằm hạt đắc", price: 20000 },
+        { name: "Trà mãng cầu", price: 20000 },
+        { name: "Trà chanh Thái xanh", price: 17000 },
+        { name: "Trà dưa lưới", price: 17000 },
+        { name: "Trà dâu", price: 17000 },
+        { name: "Trà ổi hồng", price: 17000 }
+    ],
+    "Trà Sữa": [
+        { name: "Trà sữa thái xanh", price: 20000 },
+        { name: "Trà sữa thái đỏ", price: 20000 },
+        { name: "Sữa tươi TCDD", price: 20000 },
+        { name: "Trà sữa Matcha", price: 20000 },
+        { name: "Matcha latte", price: 20000 },
+        { name: "Cacao latte", price: 20000 },
+        { name: "Trà sữa việt quất", price: 20000 },
+        { name: "Trà sữa socola", price: 20000 }
+    ],
+    "Đá Xay": [
+        { name: "Matcha Đá Xay", price: 25000 },
+        { name: "Oreo Đá Xay", price: 25000 }
+    ],
+    "Soda": [
+        { name: "Soda Đủ Vị", price: 15000, hasVariants: true }
+    ],
+    "Giải Khát": [
+        { name: "Lipton tắc xí muội", price: 10000 },
+        { name: "Tắc xí muội", price: 10000 },
+        { name: "Đá me", price: 10000 },
+        { name: "Trà dưỡng", price: 8000 }
+    ],
+    "Ăn Vặt": [
+        { name: "Bánh tráng trộn", price: 15000 },
+        { name: "Bò viên chiên", price: 12000 },
+        { name: "Cá viên chiên", price: 12000 },
+        { name: "Trái cây ly", price: 10000 },
+        { name: "Mì ly", price: 10000 },
+        { name: "Bánh Flan", price: 4000 },
+        { name: "Kem cây", price: 8000 }
+    ],
+    "Điểm Tâm Sáng": [
+        { name: "Hủ tiếu", price: 25000 },
+        { name: "Cơm sườn", price: 25000 }
+    ],
+    "Thuốc Lá": [
+        { name: "Saigon Melon", price: 22000 },
+        { name: "SaiGon Xì Gà", price: 22000 },
+        { name: "Hero", price: 25000 },
+        { name: "Jet", price: 30000 },
+        { name: "SaiGon Silver", price: 20000 }
+    ]
 };
 
-// ==================== CART MANAGEMENT ====================
+// Danh sách vị Soda
+const sodaFlavors = [
+    { name: "Soda Chanh", icon: "🍋", price: 15000 },
+    { name: "Soda Dâu", icon: "🍓", price: 15000 },
+    { name: "Soda Kiwi", icon: "🥝", price: 15000 },
+    { name: "Soda Xoài", icon: "🥭", price: 15000 },
+    { name: "Soda Dưa Hấu", icon: "🍉", price: 15000 },
+    { name: "Soda Cam", icon: "🍊", price: 15000 },
+    { name: "Soda Việt Quất", icon: "🫐", price: 15000 },
+    { name: "Soda Đào", icon: "🍑", price: 15000 }
+];
+
+// ===========================
+// STATE MANAGEMENT
+// ===========================
+let currentCategory = Object.keys(menuData)[0];
 let cart = [];
 
-// Load cart from localStorage
-function loadCart() {
-    const savedCart = localStorage.getItem('cafeCart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-        updateCartUI();
-    }
+// ===========================
+// UTILITY FUNCTIONS
+// ===========================
+function formatPrice(price) {
+    return price.toLocaleString('vi-VN') + '₫';
 }
 
-// Save cart to localStorage
-function saveCart() {
-    localStorage.setItem('cafeCart', JSON.stringify(cart));
+function getCartItemIndex(itemName) {
+    return cart.findIndex(item => item.name === itemName);
 }
 
-// Add item to cart
-function addToCart(itemId, quantity) {
-    const item = menuData.find(i => i.id === itemId);
-    if (!item || quantity <= 0) return;
-    
-    const existingItem = cart.find(i => i.id === itemId);
-    
-    if (existingItem) {
-        existingItem.quantity += quantity;
-    } else {
-        cart.push({
-            id: item.id,
-            name: item.name,
-            price: item.price,
-            quantity: quantity
-        });
-    }
-    
-    saveCart();
-    updateCartUI();
-    showNotification(`✅ Đã thêm ${item.name} vào giỏ hàng!`);
-}
-
-// Remove item from cart
-function removeFromCart(itemId) {
-    cart = cart.filter(i => i.id !== itemId);
-    saveCart();
-    updateCartUI();
-    showNotification('🗑️ Đã xóa món khỏi giỏ hàng');
-}
-
-// Clear entire cart
-function clearCart() {
-    if (cart.length === 0) return;
-    
-    if (confirm('Bạn có chắc muốn xóa toàn bộ giỏ hàng?')) {
-        cart = [];
-        saveCart();
-        updateCartUI();
-        showNotification('🗑️ Đã xóa toàn bộ giỏ hàng');
-    }
-}
-
-// Update cart UI
-function updateCartUI() {
-    const cartItems = document.getElementById('cartItems');
-    const totalPrice = document.getElementById('totalPrice');
-    const cartCount = document.querySelector('.cart-count');
-    
-    // Update cart count
+function updateCartBadge() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
+    const badge = document.getElementById('cartBadge');
+    badge.textContent = totalItems;
+    badge.style.display = totalItems > 0 ? 'flex' : 'none';
+}
+
+function calculateTotal() {
+    return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+}
+
+// ===========================
+// RENDER FUNCTIONS
+// ===========================
+function renderCategories() {
+    const tabsContainer = document.getElementById('categoryTabs');
+    tabsContainer.innerHTML = '';
     
-    // Update cart items
-    if (cart.length === 0) {
-        cartItems.innerHTML = '<p class="empty-cart">Giỏ hàng trống</p>';
-        totalPrice.textContent = '0đ';
-        return;
-    }
+    Object.keys(menuData).forEach(category => {
+        const tab = document.createElement('div');
+        tab.className = `category-tab ${category === currentCategory ? 'active' : ''}`;
+        tab.textContent = category;
+        tab.onclick = () => switchCategory(category);
+        tabsContainer.appendChild(tab);
+    });
+}
+
+function renderMenu() {
+    const menuGrid = document.getElementById('menuGrid');
+    menuGrid.innerHTML = '';
     
-    let html = '';
-    let total = 0;
+    const items = menuData[currentCategory];
     
-    cart.forEach(item => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
+    items.forEach(item => {
+        const cartItem = cart.find(c => c.name === item.name);
+        const quantity = cartItem ? cartItem.quantity : 0;
         
-        html += `
-            <div class="cart-item">
-                <div class="cart-item-header">
-                    <span class="cart-item-name">${item.name}</span>
-                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})">×</button>
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'menu-item';
+        
+        // Kiểm tra nếu là món có variants (như Soda Đủ Vị)
+        if (item.hasVariants) {
+            itemDiv.innerHTML = `
+                <div class="item-header">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-price">${formatPrice(item.price)}</div>
                 </div>
-                <div class="cart-item-details">
-                    <span>${item.quantity} × ${formatPrice(item.price)}</span>
-                    <span style="font-weight: 700">${formatPrice(subtotal)}</span>
+                <div class="item-actions">
+                    <button class="qty-btn" onclick="showSodaModal()" style="width: 100%; border-radius: 10px; padding: 10px; font-size: 14px;">
+                        Chọn Vị
+                    </button>
                 </div>
+            `;
+        } else {
+            itemDiv.innerHTML = `
+                <div class="item-header">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-price">${formatPrice(item.price)}</div>
+                </div>
+                <div class="item-actions">
+                    <div class="qty-control">
+                        <button class="qty-btn" onclick="updateQuantity('${item.name}', ${item.price}, -1)">−</button>
+                        <span class="qty-display" id="qty-${item.name.replace(/\s/g, '-')}">${quantity}</span>
+                        <button class="qty-btn" onclick="updateQuantity('${item.name}', ${item.price}, 1)">+</button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        menuGrid.appendChild(itemDiv);
+    });
+}
+
+function renderCart() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalPriceElement = document.getElementById('totalPrice');
+    
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <div class="empty-cart">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 2L11 6M15 2L13 6M6 6H18L19 19H5L6 6Z" stroke-width="1.5"/>
+                </svg>
+                <p>Giỏ hàng trống</p>
             </div>
         `;
-    });
+    } else {
+        cartItemsContainer.innerHTML = cart.map(item => `
+            <div class="cart-item">
+                <div class="cart-item-header">
+                    <div class="cart-item-name">${item.name}</div>
+                    <button class="cart-item-remove" onclick="removeFromCart('${item.name}')">×</button>
+                </div>
+                <div class="cart-item-footer">
+                    <div class="cart-item-qty">
+                        <button class="cart-qty-btn" onclick="updateCartItemQty('${item.name}', -1)">−</button>
+                        <span>${item.quantity}</span>
+                        <button class="cart-qty-btn" onclick="updateCartItemQty('${item.name}', 1)">+</button>
+                    </div>
+                    <div class="cart-item-price">${formatPrice(item.price * item.quantity)}</div>
+                </div>
+            </div>
+        `).join('');
+    }
     
-    cartItems.innerHTML = html;
-    totalPrice.textContent = formatPrice(total);
+    totalPriceElement.textContent = formatPrice(calculateTotal());
 }
 
-// ==================== ORDER FUNCTION ====================
-/**
- * ⚠️ QUAN TRỌNG: CẤU HÌNH THÔNG TIN LIÊN HỆ
- */
-const PHONE_NUMBER = '0984771687'; // ← Số điện thoại (bỏ số 0 đầu khi dùng WhatsApp)
-const WHATSAPP_NUMBER = '84984771687'; // ← Số WhatsApp (84 + số không có 0)
-const ZALO_NUMBER = '0984771687'; // ← Số Zalo
+// ===========================
+// CART FUNCTIONS
+// ===========================
+function updateQuantity(itemName, itemPrice, change) {
+    const index = getCartItemIndex(itemName);
+    
+    if (index === -1 && change > 0) {
+        // Add new item
+        cart.push({
+            name: itemName,
+            price: itemPrice,
+            quantity: 1
+        });
+    } else if (index !== -1) {
+        cart[index].quantity += change;
+        
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+    }
+    
+    // Update display
+    const qtyElement = document.getElementById(`qty-${itemName.replace(/\s/g, '-')}`);
+    if (qtyElement) {
+        const currentQty = cart.find(c => c.name === itemName)?.quantity || 0;
+        qtyElement.textContent = currentQty;
+    }
+    
+    updateCartBadge();
+    renderCart();
+}
 
-function orderViaSMS() {
+function updateCartItemQty(itemName, change) {
+    const index = getCartItemIndex(itemName);
+    
+    if (index !== -1) {
+        cart[index].quantity += change;
+        
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+        
+        // Update menu display if item is visible
+        const qtyElement = document.getElementById(`qty-${itemName.replace(/\s/g, '-')}`);
+        if (qtyElement) {
+            const currentQty = cart.find(c => c.name === itemName)?.quantity || 0;
+            qtyElement.textContent = currentQty;
+        }
+        
+        updateCartBadge();
+        renderCart();
+    }
+}
+
+function removeFromCart(itemName) {
+    const index = getCartItemIndex(itemName);
+    
+    if (index !== -1) {
+        cart.splice(index, 1);
+        
+        // Update menu display
+        const qtyElement = document.getElementById(`qty-${itemName.replace(/\s/g, '-')}`);
+        if (qtyElement) {
+            qtyElement.textContent = '0';
+        }
+        
+        updateCartBadge();
+        renderCart();
+    }
+}
+
+// ===========================
+// CATEGORY SWITCHING
+// ===========================
+function switchCategory(category) {
+    currentCategory = category;
+    renderCategories();
+    renderMenu();
+}
+
+// ===========================
+// CART SIDEBAR TOGGLE
+// ===========================
+function toggleCart() {
+    const overlay = document.getElementById('cartOverlay');
+    const sidebar = document.getElementById('cartSidebar');
+    
+    overlay.classList.add('active');
+    sidebar.classList.add('active');
+}
+
+function closeCart() {
+    const overlay = document.getElementById('cartOverlay');
+    const sidebar = document.getElementById('cartSidebar');
+    
+    overlay.classList.remove('active');
+    sidebar.classList.remove('active');
+}
+
+// ===========================
+// MODAL FUNCTIONS
+// ===========================
+function showSodaModal() {
+    const modal = document.getElementById('sodaModal');
+    const flavorsContainer = document.getElementById('sodaFlavors');
+    
+    // Render các vị soda
+    flavorsContainer.innerHTML = sodaFlavors.map(flavor => `
+        <div class="soda-flavor" onclick="selectSodaFlavor('${flavor.name}', ${flavor.price})">
+            <div class="flavor-icon">${flavor.icon}</div>
+            <div class="flavor-name">${flavor.name}</div>
+            <div class="flavor-price">${formatPrice(flavor.price)}</div>
+        </div>
+    `).join('');
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSodaModal() {
+    const modal = document.getElementById('sodaModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function selectSodaFlavor(flavorName, price) {
+    // Thêm vào giỏ hàng
+    updateQuantity(flavorName, price, 1);
+    
+    // Đóng modal
+    closeSodaModal();
+    
+    // Hiển thị thông báo nhẹ
+    showToast(`Đã thêm ${flavorName} vào giỏ hàng`);
+}
+
+function showOrderModal() {
     if (cart.length === 0) {
         alert('Giỏ hàng trống! Vui lòng chọn món trước khi đặt hàng.');
         return;
     }
     
-    // Tạo nội dung đơn hàng
-    let message = '☕ ĐƠN HÀNG CÀ PHÊ SANG\n';
-    message += '━━━━━━━━━━━━━━━━\n\n';
+    const modal = document.getElementById('orderModal');
+    const summaryContainer = document.getElementById('orderSummary');
     
-    cart.forEach((item, index) => {
-        message += `${index + 1}. ${item.name}\n`;
-        message += `   SL: ${item.quantity} × ${formatPrice(item.price)} = ${formatPrice(item.price * item.quantity)}\n\n`;
-    });
+    // Tạo tóm tắt đơn hàng
+    let summaryHTML = '<h4>📋 Đơn Hàng Của Bạn</h4>';
+    summaryHTML += '<div class="summary-items">';
     
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    message += '━━━━━━━━━━━━━━━━\n';
-    message += `💰 TỔNG CỘNG: ${formatPrice(total)}\n\n`;
-    message += '📍 Vui lòng ghi địa chỉ giao hàng:';
-    
-    // Hiển thị popup chọn phương thức
-    showOrderOptions(message);
-}
-
-function showOrderOptions(message) {
-    const modal = document.createElement('div');
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 10001;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: fadeIn 0.3s ease;
-    `;
-    
-    modal.innerHTML = `
-        <div style="
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-        ">
-            <h3 style="
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-                color: #6B4423;
-            ">📱 Chọn Cách Đặt Hàng</h3>
-            
-            <button onclick="sendViaWhatsApp('${encodeURIComponent(message)}')" style="
-                width: 100%;
-                padding: 1rem;
-                margin-bottom: 0.8rem;
-                background: linear-gradient(135deg, #25D366, #128C7E);
-                color: white;
-                border: none;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 1rem;
-                cursor: pointer;
-                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            ">
-                <span style="font-size: 1.2rem;">💬</span> WhatsApp
-            </button>
-            
-            <button onclick="sendViaZalo('${encodeURIComponent(message)}')" style="
-                width: 100%;
-                padding: 1rem;
-                margin-bottom: 0.8rem;
-                background: linear-gradient(135deg, #0068FF, #0084FF);
-                color: white;
-                border: none;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 1rem;
-                cursor: pointer;
-                box-shadow: 0 4px 15px rgba(0, 104, 255, 0.3);
-            ">
-                <span style="font-size: 1.2rem;">💙</span> Zalo
-            </button>
-            
-            <button onclick="sendViaSMS('${encodeURIComponent(message)}')" style="
-                width: 100%;
-                padding: 1rem;
-                margin-bottom: 0.8rem;
-                background: linear-gradient(135deg, #6B4423, #8B6F47);
-                color: white;
-                border: none;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 1rem;
-                cursor: pointer;
-                box-shadow: 0 4px 15px rgba(107, 68, 35, 0.3);
-            ">
-                <span style="font-size: 1.2rem;">📱</span> SMS (Chỉ trên điện thoại)
-            </button>
-            
-            <button onclick="copyOrderText('${encodeURIComponent(message)}')" style="
-                width: 100%;
-                padding: 1rem;
-                margin-bottom: 1rem;
-                background: transparent;
-                color: #6B4423;
-                border: 2px solid #6B4423;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 1rem;
-                cursor: pointer;
-            ">
-                <span style="font-size: 1.2rem;">📋</span> Copy Đơn Hàng
-            </button>
-            
-            <button onclick="this.parentElement.parentElement.remove()" style="
-                background: transparent;
-                border: none;
-                color: #999;
-                cursor: pointer;
-                font-size: 0.9rem;
-                text-decoration: underline;
-            ">Đóng</button>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.remove();
-        }
-    });
-}
-
-function sendViaWhatsApp(encodedMessage) {
-    const message = decodeURIComponent(encodedMessage);
-    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, '_blank');
-    document.querySelector('div[style*="z-index: 10001"]').remove();
-    showNotification('✅ Đang mở WhatsApp...');
-}
-
-function sendViaZalo(encodedMessage) {
-    const message = decodeURIComponent(encodedMessage);
-    // Zalo deep link (hoạt động tốt trên mobile)
-    const zaloURL = `https://zalo.me/${ZALO_NUMBER}`;
-    window.open(zaloURL, '_blank');
-    document.querySelector('div[style*="z-index: 10001"]').remove();
-    
-    // Copy message to clipboard
-    copyToClipboard(message);
-    showNotification('✅ Đang mở Zalo... Đơn hàng đã copy vào clipboard!');
-}
-
-function sendViaSMS(encodedMessage) {
-    const message = decodeURIComponent(encodedMessage);
-    const smsLink = `sms:${PHONE_NUMBER}?body=${encodeURIComponent(message)}`;
-    
-    try {
-        window.location.href = smsLink;
-        document.querySelector('div[style*="z-index: 10001"]').remove();
-        showNotification('📱 Đang mở ứng dụng tin nhắn...');
-    } catch (error) {
-        alert('SMS chỉ hoạt động trên điện thoại. Vui lòng chọn WhatsApp hoặc Zalo!');
-    }
-}
-
-function copyOrderText(encodedMessage) {
-    const message = decodeURIComponent(encodedMessage);
-    copyToClipboard(message);
-    document.querySelector('div[style*="z-index: 10001"]').remove();
-    showNotification('✅ Đã copy đơn hàng! Bạn có thể dán vào bất kỳ ứng dụng nào.');
-}
-
-function copyToClipboard(text) {
-    // Tạo textarea tạm
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    
-    try {
-        document.execCommand('copy');
-    } catch (err) {
-        console.error('Copy failed:', err);
-    }
-    
-    document.body.removeChild(textarea);
-}
-
-// ==================== MENU RENDERING ====================
-function renderMenu(filter = 'all') {
-    const menuGrid = document.getElementById('menuGrid');
-    const filteredItems = filter === 'all' 
-        ? menuData 
-        : menuData.filter(item => item.category === filter);
-    
-    let html = '';
-    
-    filteredItems.forEach(item => {
-        html += `
-            <div class="menu-item" data-category="${item.category}">
-                <div class="item-category">${categoryNames[item.category]}</div>
-                <div class="item-header">
-                    <h3 class="item-name">${item.name}</h3>
-                    <span class="item-price">${formatPrice(item.price)}</span>
-                </div>
-                <div class="item-controls">
-                    <div class="quantity-control">
-                        <button class="qty-btn" onclick="decrementQty(${item.id})">−</button>
-                        <input type="number" class="qty-input" id="qty-${item.id}" value="1" min="1" max="99" readonly>
-                        <button class="qty-btn" onclick="incrementQty(${item.id})">+</button>
-                    </div>
-                    <button class="add-to-cart-btn" onclick="addItemToCart(${item.id})">
-                        Thêm vào giỏ
-                    </button>
-                </div>
+    cart.forEach(item => {
+        summaryHTML += `
+            <div class="summary-item">
+                <span>${item.name} × ${item.quantity}</span>
+                <span>${formatPrice(item.price * item.quantity)}</span>
             </div>
         `;
     });
     
-    menuGrid.innerHTML = html;
-}
-
-// Increment quantity
-function incrementQty(itemId) {
-    const input = document.getElementById(`qty-${itemId}`);
-    let value = parseInt(input.value);
-    if (value < 99) {
-        input.value = value + 1;
-    }
-}
-
-// Decrement quantity
-function decrementQty(itemId) {
-    const input = document.getElementById(`qty-${itemId}`);
-    let value = parseInt(input.value);
-    if (value > 1) {
-        input.value = value - 1;
-    }
-}
-
-// Add item with quantity
-function addItemToCart(itemId) {
-    const input = document.getElementById(`qty-${itemId}`);
-    const quantity = parseInt(input.value);
-    addToCart(itemId, quantity);
-    input.value = 1; // Reset quantity
-}
-
-// ==================== CATEGORY FILTER ====================
-function filterCategory(category) {
-    // Update active tab
-    const tabs = document.querySelectorAll('.tab-btn');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    event.target.classList.add('active');
-    
-    // Render filtered menu
-    renderMenu(category);
-}
-
-// ==================== CART TOGGLE ====================
-function toggleCart() {
-    const cartSidebar = document.getElementById('cartSidebar');
-    const overlay = document.getElementById('overlay');
-    
-    cartSidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
-}
-
-// ==================== UTILITY FUNCTIONS ====================
-function formatPrice(price) {
-    return price.toLocaleString('vi-VN') + 'đ';
-}
-
-function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: linear-gradient(135deg, #6B4423 0%, #8B6F47 100%);
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 50px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s;
-        font-weight: 600;
+    summaryHTML += '</div>';
+    summaryHTML += `
+        <div class="summary-total">
+            <span>Tổng cộng:</span>
+            <span>${formatPrice(calculateTotal())}</span>
+        </div>
     `;
     
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
+    summaryContainer.innerHTML = summaryHTML;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
-// ==================== SMOOTH SCROLL ====================
+function closeOrderModal() {
+    const modal = document.getElementById('orderModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function showToast(message) {
+    // Tạo toast notification đơn giản
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, var(--primary-brown), var(--dark-brown));
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 14px;
+        z-index: 1000;
+        animation: slideUp 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.animation = 'slideDown 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 2000);
+}
+
+// ===========================
+// ORDER FUNCTIONS
+// ===========================
+function generateOrderMessage() {
+    if (cart.length === 0) {
+        alert('Giỏ hàng trống! Vui lòng chọn món trước khi đặt hàng.');
+        return null;
+    }
+    
+    let message = '🛒 ĐƠN HÀNG MỚI - COFFEE SANG\n';
+    message += '━━━━━━━━━━━━━━━━━━━\n\n';
+    
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name}\n`;
+        message += `   × ${item.quantity} - ${formatPrice(item.price * item.quantity)}\n\n`;
+    });
+    
+    message += '━━━━━━━━━━━━━━━━━━━\n';
+    message += `💰 TỔNG CỘNG: ${formatPrice(calculateTotal())}\n\n`;
+    message += '📞 Liên hệ: 0984 771 687\n';
+    message += '🙏 Cảm ơn quý khách!';
+    
+    return message;
+}
+
+function orderViaSMS() {
+    const message = generateOrderMessage();
+    if (!message) return;
+    
+    closeOrderModal();
+    
+    const phoneNumber = '0984771687';
+    const encodedMessage = encodeURIComponent(message);
+    window.location.href = `sms:${phoneNumber}?body=${encodedMessage}`;
+}
+
+function orderViaWhatsApp() {
+    const message = generateOrderMessage();
+    if (!message) return;
+    
+    closeOrderModal();
+    
+    const phoneNumber = '84984771687'; // Format: 84 + số điện thoại không có số 0 đầu
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+}
+
+function orderViaZalo() {
+    const message = generateOrderMessage();
+    if (!message) return;
+    
+    closeOrderModal();
+    
+    const phoneNumber = '0984771687';
+    
+    // Zalo deep link - sẽ mở app Zalo nếu có, hoặc Zalo web
+    const zaloLink = `https://zalo.me/${phoneNumber}`;
+    
+    // Hiển thị thông báo cho người dùng
+    alert(`Đơn hàng của bạn:\n\n${message}\n\nVui lòng gửi tin nhắn này cho chúng tôi qua Zalo!`);
+    
+    // Mở Zalo
+    window.open(zaloLink, '_blank');
+}
+
+// ===========================
+// INITIALIZATION
+// ===========================
+document.addEventListener('DOMContentLoaded', () => {
+    renderCategories();
+    renderMenu();
+    renderCart();
+    updateCartBadge();
+    
+    // Close cart when clicking overlay
+    document.getElementById('cartOverlay').addEventListener('click', closeCart);
+    
+    // Close modals when clicking overlay
+    document.getElementById('sodaModal').addEventListener('click', (e) => {
+        if (e.target.id === 'sodaModal') {
+            closeSodaModal();
+        }
+    });
+    
+    document.getElementById('orderModal').addEventListener('click', (e) => {
+        if (e.target.id === 'orderModal') {
+            closeOrderModal();
+        }
+    });
+    
+    // Prevent scroll when cart is open
+    const cartSidebar = document.getElementById('cartSidebar');
+    const observer = new MutationObserver(() => {
+        if (cartSidebar.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    observer.observe(cartSidebar, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+});
+
+// ===========================
+// SMOOTH SCROLL
+// ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -507,56 +537,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// ==================== SCROLL ANIMATIONS ====================
-function handleScrollAnimation() {
-    const elements = document.querySelectorAll('.menu-item, .contact-item');
-    
-    elements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight - 100;
-        
-        if (isVisible) {
-            element.classList.add('fade-in');
-        }
-    });
-}
-
-window.addEventListener('scroll', handleScrollAnimation);
-
-// ==================== INITIALIZATION ====================
-document.addEventListener('DOMContentLoaded', function() {
-    // Render initial menu
-    renderMenu();
-    
-    // Load saved cart
-    loadCart();
-    
-    // Initial scroll animation check
-    handleScrollAnimation();
-    
-    console.log('🎉 Website đã sẵn sàng!');
-    console.log('📱 Số điện thoại nhận đơn:', PHONE_NUMBER);
-    console.log('💡 Để đổi số điện thoại, tìm dòng: const PHONE_NUMBER trong file script.js');
-});
-
-// ==================== KEYBOARD SHORTCUTS ====================
-document.addEventListener('keydown', function(e) {
-    // Press 'C' to toggle cart
-    if (e.key === 'c' || e.key === 'C') {
-        if (!e.target.matches('input, textarea')) {
-            toggleCart();
-        }
-    }
-    
-    // Press 'Escape' to close cart
-    if (e.key === 'Escape') {
-        const cartSidebar = document.getElementById('cartSidebar');
-        const overlay = document.getElementById('overlay');
-        if (cartSidebar.classList.contains('active')) {
-            cartSidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-    }
 });
